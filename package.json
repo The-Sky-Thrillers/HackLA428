@@ -1,0 +1,24 @@
+{
+  "name": "HackLA428",
+  "version": "1.0.0",
+  "description": "metro visualization - hack la 4/28 hackathon",
+  "main": "TBD",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/The-Sky-Thrillers/HackLA428.git"
+  },
+  "author": "Keenan <klp2012@gmail.com> (http://klp.ninja/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Sky-Thrillers/HackLA428/issues"
+  },
+  "homepage": "https://github.com/The-Sky-Thrillers/HackLA428",
+  "dependencies": {
+    "es6-promise": "^2.1.1",
+    "firebase": "^2.2.4",
+    "needle": "^0.9.2"
+  }
+}
