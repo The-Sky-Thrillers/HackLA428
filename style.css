@@ -3,3 +3,16 @@ html, body, #map-canvas {
   margin: 0px;
   padding: 0px
 }
+
+#route {
+  position: fixed;
+  bottom: 60px;
+  left: 60px;
+  width: 200px;
+}
+
+#new-route-btn {
+  position: fixed;
+  bottom: 60px;
+  left: 270px;
+}
