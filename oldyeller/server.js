@@ -11,14 +11,18 @@ var options = {
 };
  
 var stream = needle.get(baseUrl, options);
- 
+var route = [];
+
 stream.on('readable', function() {
     while (data = this.read()) {
       var routes = data.items;
       routes.forEach(function(route){
         needle.get(baseUrl + route.id + '/vehicles/', function(error, response){
-          if(!error){
-            console.log(response.body);
+            route.push({
+              id: response.body.id,
+              latitude: response.body.latitude,
+              longitude: response.body.longitude
+            });
           }
         });
       });
