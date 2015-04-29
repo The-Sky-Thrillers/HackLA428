@@ -1,4 +1,7 @@
 $(function(){
+  // firebase
+  var fb = new Firebase("https://lahack-transit.firebaseio.com");
+
 
   // google maps config
 
@@ -35,6 +38,7 @@ $(function(){
     // request all the buses current location every 3000 ms and put them on the map
     setInterval(function() {
       $.get(url, function(data){
+
         data.items.forEach(function(bus) {
 
           var coordinate = new google.maps.LatLng(bus.latitude, bus.longitude);
@@ -45,14 +49,17 @@ $(function(){
             icon: orangeDot
           });
 
-          // setTimeout(function(){
-          //   marker.setMap(null);
-          // }, 3000);
-
         });
       });
     }, 3000);
 
+    // save bus to firebase every few minutes
+    setInterval(function() {
+      $.get(url, function(data){
+
+        fb.push(data.items)
+      });
+    }, 1000 * 60 * 5);
 
   });
 
